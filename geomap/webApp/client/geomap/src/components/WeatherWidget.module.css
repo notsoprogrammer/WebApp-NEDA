@@ -1,0 +1,67 @@
+.weatherWidget {
+  /* Container styles */
+  background: linear-gradient(to bottom, #83a4d4, #b6fbff); /* Gradient background */
+  color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.currentWeather {
+  /* Current weather styles */
+  background-image: url('path_to_your_background_image_based_on_weather');
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+}
+
+.temperature {
+  /* Temperature styles */
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.condition {
+  /* Condition styles */
+  font-size: 1.2em;
+}
+
+.details {
+  /* Humidity and wind styles */
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
+}
+
+.humidity, .wind {
+  /* Individual detail styles */
+  flex: 1;
+  text-align: center;
+}
+
+.forecast {
+  /* Forecast section styles */
+  display: flex;
+  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+}
+
+.forecastDay {
+  /* Individual forecast day styles */
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+.dayName {
+  /* Day name styles */
+  font-weight: bold;
+}
+
+.dayTemp {
+  /* Day temperature range styles */
+}
+
+.dayCondition {
+  /* Day condition styles */
+}
