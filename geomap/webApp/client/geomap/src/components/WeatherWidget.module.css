@@ -1,5 +1,6 @@
 .weatherWidget {
   /* Container styles */
+  padding: 20px;
   background: linear-gradient(to bottom, #83a4d4, #b6fbff); /* Gradient background */
   color: #fff;
   border-radius: 20px;
@@ -42,6 +43,7 @@
 
 .forecast {
   /* Forecast section styles */
+  justify-content: space-around;
   display: flex;
   background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
 }

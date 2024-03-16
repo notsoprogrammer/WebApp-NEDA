@@ -11,7 +11,7 @@ const RiceStat = () => {
     let viz;
     const initViz = () => {
       // Replace with your Tableau dashboard URL
-      const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics/Dashboard43';
+      const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V1/AssortedCropDB';
       
       const options = {
         width: '100%',
@@ -47,15 +47,15 @@ const RiceStat = () => {
     };
   }, []);
   
-  // Inline styles for responsive design
-  const responsiveStyle = {
-    height: '100vh', // Adjust this value as needed
-    width: '100%',
-    padding: '10px',
-    backgroundSize: 'cover', // Adjust as per your background image requirements
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-  };
+  // // Inline styles for responsive design
+  // const responsiveStyle = {
+  //   height: '100vh', // Adjust this value as needed
+  //   width: '100%',
+  //   padding: '10px',
+  //   backgroundSize: 'cover', // Adjust as per your background image requirements
+  //   backgroundRepeat: 'no-repeat',
+  //   backgroundPosition: 'center',
+  // };
 
   return (
     <Box

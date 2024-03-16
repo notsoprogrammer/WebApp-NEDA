@@ -4,35 +4,9 @@
   import { setMode } from '../slices/modeSlice';
   import { clearCredentials } from '../slices/authSlice';
   import { useLogoutMutation } from '../slices/usersApiSlice';
-  import {
-      ArrowDropDownOutlined,
-      ChevronLeft,
-      Groups2Outlined,
-      HomeOutlined,
-      DarkModeOutlined,
-      LightModeOutlined,
-      SettingsOutlined,
-      ShoppingCartOutlined,
-      ExitToAppOutlined,ReceiptLongOutlined,PublicOutlined,ChevronRightOutlined // Import the icon for logout button
+  import {Groups2Outlined,HomeOutlined,DarkModeOutlined,LightModeOutlined,SettingsOutlined,ShoppingCartOutlined,ExitToAppOutlined,ReceiptLongOutlined,PublicOutlined,ChevronRightOutlined // Import the icon for logout button
   } from "@mui/icons-material";
-import {
-    Avatar,
-    Box,
-    Divider,
-    Drawer,
-    IconButton,
-    Button,
-    List,
-    ListItem,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    Typography,
-    useTheme,
-    Menu,
-    MenuItem,
-    Stack
-} from "@mui/material";
+import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButton,ListItemIcon,ListItemText,Typography,useTheme,Menu,MenuItem,Stack} from "@mui/material";
 
 
   const navItems = [
@@ -130,7 +104,7 @@ import {
                           {/* User Profile */}
                           <Avatar alt={user.name} src={user.profilePicture} sx={{ width: 56, height: 56 }} />
                           <Typography variant="h6" noWrap>
-                              {user.name}
+                              {user.nanpme}
                           </Typography>
                           <Typography variant="body2" noWrap>
                               {user.job}
@@ -138,56 +112,56 @@ import {
 
                           <Box display="flex" alignItems="center" mt={'20px'}>
                             <Typography variant="h4" fontWeight="bold">
-                              GEOMAP SAMAR
+                              MAPLYT
                             </Typography>
                           </Box>
                       </Box>
                       <List>
-    {navItems.map(({ text, icon }) => {
-        const lcText = text.toLowerCase();
-        const isSelected = active === lcText;
+                        {navItems.map(({ text, icon }) => {
+                            const lcText = text.toLowerCase();
+                            const isSelected = active === lcText;
 
-        return (
-            <ListItem key={text} disablePadding>
-                <ListItemButton
-                    selected={isSelected}
-                    onClick={() => {
-                        navigate(`/${lcText}`);
-                        setActive(lcText);
-                    }}
-                    sx={{
-                        backgroundColor: isSelected ? theme.palette.secondary[300] : "transparent",
-                        color: isSelected ? theme.palette.primary[600] : theme.palette.secondary[100],
-                        '.MuiListItemIcon-root': {
-                            color: isSelected ? theme.palette.primary[600] : theme.palette.secondary[200],
-                        },
-                        '&:hover': {
-                            backgroundColor: isSelected ? theme.palette.secondary[300] : theme.palette.action.hover,
-                            '.MuiListItemIcon-root': {
-                                color: theme.palette.primary[600],
-                            },
-                        },
-                        '&.Mui-selected': {
-                            backgroundColor: theme.palette.secondary[300],
-                            color: theme.palette.primary[600],
-                            '.MuiListItemIcon-root': {
-                                color: theme.palette.primary[600],
-                            },
-                            '&:hover': {
-                                backgroundColor: theme.palette.secondary[300],
-                            },
-                        },
-                    }}
-                >
-                    <ListItemIcon>
-                        {icon}
-                    </ListItemIcon>
-                    <ListItemText primary={text} />
-                </ListItemButton>
-            </ListItem>
-        );
-    })}
-</List>
+                            return (
+                                <ListItem key={text} disablePadding>
+                                    <ListItemButton
+                                        selected={isSelected}
+                                        onClick={() => {
+                                            navigate(`/${lcText}`);
+                                            setActive(lcText);
+                                        }}
+                                        sx={{
+                                            backgroundColor: isSelected ? theme.palette.secondary[300] : "transparent",
+                                            color: isSelected ? theme.palette.primary[600] : theme.palette.secondary[100],
+                                            '.MuiListItemIcon-root': {
+                                                color: isSelected ? theme.palette.primary[600] : theme.palette.secondary[200],
+                                            },
+                                            '&:hover': {
+                                                backgroundColor: isSelected ? theme.palette.secondary[300] : theme.palette.action.hover,
+                                                '.MuiListItemIcon-root': {
+                                                    color: theme.palette.primary[600],
+                                                },
+                                            },
+                                            '&.Mui-selected': {
+                                                backgroundColor: theme.palette.secondary[300],
+                                                color: theme.palette.primary[600],
+                                                '.MuiListItemIcon-root': {
+                                                    color: theme.palette.primary[600],
+                                                },
+                                                '&:hover': {
+                                                    backgroundColor: theme.palette.secondary[300],
+                                                },
+                                            },
+                                        }}
+                                    >
+                                        <ListItemIcon>
+                                            {icon}
+                                        </ListItemIcon>
+                                        <ListItemText primary={text} />
+                                    </ListItemButton>
+                                </ListItem>
+                            );
+                        })}
+                    </List>
 
 
                       <Box sx={{ mt: 'auto', width: '100%', p: '1.5rem' }}>
