@@ -463,7 +463,7 @@ const Maps = () => {
   return (
       <Box>
         <FlexBetween>
-            <MapContainer center={center} zoom={9} ref={mapRef} style={{ zIndex: 100, position: 'relative' }}>
+            <MapContainer center={center} zoom={9} ref={mapRef} style={{ zIndex: 100, position: 'relative'}}>
 
               <LayersControl position="topright" className="custom-layers-control">
                 <LayersControl.BaseLayer checked name="Street Map">

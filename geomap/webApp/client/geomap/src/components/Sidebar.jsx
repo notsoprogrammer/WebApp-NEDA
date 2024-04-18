@@ -15,13 +15,17 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
       icon: <HomeOutlined />,
     },
     {
+        text: "Maps",
+        icon: <PublicOutlined />,
+    },
+    {
       text: "Farmers",
       icon: <ShoppingCartOutlined />,
     },
-    {
-      text: "Associations",
-      icon: <Groups2Outlined />,
-    },
+    // {
+    //   text: "Associations",
+    //   icon: <Groups2Outlined />,
+    // },
     {
       text: "Rice",
       icon: <ReceiptLongOutlined />,
@@ -30,10 +34,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
       text: "Crops",
       icon: <ReceiptLongOutlined />,
     },
-    {
-      text: "Maps",
-      icon: <PublicOutlined />,
-    },
+
     {
       text: "MapUploads",
       icon: <PublicOutlined />,
@@ -55,14 +56,16 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
 
       const [logoutApiCall] = useLogoutMutation();
       const logoutHandler = async () => {
-          try {
-              await logoutApiCall().unwrap();
-              dispatch(clearCredentials());
-              navigate('/');
-          } catch (error) {
-              console.log(error);
-          }
-      };
+        try {
+            await logoutApiCall().unwrap(); // Ensure this calls the correct endpoint
+            dispatch(clearCredentials());
+            navigate('/');
+        } catch (error) {
+            console.error('Logout failed:', error);
+            // Optionally set an error state and display a message to the user
+        }
+    };
+    
 
       useEffect(() => {
           setActive(pathname.substring(1));
@@ -104,7 +107,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
                           {/* User Profile */}
                           <Avatar alt={user.name} src={user.profilePicture} sx={{ width: 56, height: 56 }} />
                           <Typography variant="h6" noWrap>
-                              {user.nanpme}
+                              {user.name}
                           </Typography>
                           <Typography variant="body2" noWrap>
                               {user.job}
@@ -112,7 +115,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
 
                           <Box display="flex" alignItems="center" mt={'20px'}>
                             <Typography variant="h4" fontWeight="bold">
-                              MAPLYT
+                              VizMapp
                             </Typography>
                           </Box>
                       </Box>

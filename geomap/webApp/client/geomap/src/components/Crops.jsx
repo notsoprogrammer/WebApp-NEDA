@@ -66,6 +66,7 @@ const RiceStat = () => {
     display: 'flex', 
     justifyContent: 'center', 
     alignItems: 'center', 
+    
   }}
 >
   <div 
