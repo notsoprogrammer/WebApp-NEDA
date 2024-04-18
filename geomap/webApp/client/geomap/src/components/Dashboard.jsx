@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import WeatherWidget from './WeatherWidget';
-import { Box } from '@mui/material';
-
+import { Box, Typography, Paper } from '@mui/material';
+import AgricultureInfoCard from './AgriCardInfo';
 const { tableau } = window;
 
 const Dashboard = () => {
   const [coords, setCoords] = useState(null);
-  const tableauVizRef = useRef(null);
+  const tableauSummaryVizRef = useRef(null);
+  const tableauFarmersListVizRef = useRef(null);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
@@ -19,13 +20,13 @@ const Dashboard = () => {
       (error) => {
         console.error(error);
         setCoords({
-          latitude: 11.824043, // Default latitude
-          longitude: 124.840340, // Default longitude
+          latitude: 11.7888905913845, // Default latitude
+          longitude: 124.879792127437, // Default longitude
         });
       }
     );
 
-    const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V1/SummaryofFarmers';
+    // Options for both Tableau dashboards
     const options = {
       hideTabs: true,
       hideToolbar: true,
@@ -34,26 +35,38 @@ const Dashboard = () => {
       },
     };
 
-    // Instantiate the Tableau Viz
-    const viz = new tableau.Viz(tableauVizRef.current, vizUrl, options);
+  //   // Instantiate the Tableau Viz for the summary
+    const summaryVizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V1/Dashboard5';
+    new tableau.Viz(tableauSummaryVizRef.current, summaryVizUrl, options);
 
-    // Clean up the Viz when the component unmounts
     return () => {
-      viz.dispose();
+      if (tableauSummaryVizRef.current) {
+        tableauSummaryVizRef.current.dispose();
+      }
+      if (tableauFarmersListVizRef.current) {
+        tableauFarmersListVizRef.current.dispose();
+      }
     };
-  }, []);
+   }, []);
 
-  return (
-    <Box sx={{ display: 'flex', width: '100%', height: '100vh', paddingLeft:'20px', paddingTop: '20px' }}>
-      {/* Left panel for Weather Widget */}
-      <Box sx={{ flex: 1, overflow: 'auto' }}>
-        {coords && <WeatherWidget coords={coords} />}
+    return (
+      <Box sx={{ display: 'flex', flexDirection: 'row', height: '100vh', overflow: 'hidden', padding: '12px', boxSizing: 'border-box' }}>
+
+        <Box sx={{ width: '50%', paddingRight: '10px', display: 'flex', flexDirection: 'column' }}>
+          <Box>
+            {coords && <WeatherWidget coords={coords} />}
+          </Box>
+          <Box sx={{ width: '100%', overflowY: 'auto' }}>
+            <AgricultureInfoCard />
+          </Box>
+        <Box sx={{overflowX:'hidden', marginTop: '20px', flex: '1'}}>
+          <div ref={tableauFarmersListVizRef} style={{ width: '100%', height: '100%' }} />
+        </Box>
+      </Box>
+      <Box sx={{ width: '50%'}}>
+        <div ref={tableauSummaryVizRef} style={{ width: '100%', height: '100%' }} />
       </Box>
       
-      {/* Right panel for Tableau Summary */}
-      <Box sx={{ flex: 1, overflow: 'auto' }}>
-        <div ref={tableauVizRef} style={{ height: '100%', width: '100%' }} />
-      </Box>
     </Box>
   );
 };
