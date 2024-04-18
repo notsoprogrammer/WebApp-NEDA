@@ -1,69 +1,94 @@
+/* WeatherWidget.module.css */
 .weatherWidget {
-  /* Container styles */
-  padding: 20px;
-  background: linear-gradient(to bottom, #83a4d4, #b6fbff); /* Gradient background */
-  color: #fff;
-  border-radius: 20px;
+  display: flex;
+  background: linear-gradient(to bottom, #c99f36, #62be65);
+  color: white;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.currentWeatherSection {
+  flex-basis: 40%; /* Adjust the width as necessary */
+}
+
+.locationTitle {
+  font-weight: bold;
+  padding: 10px 20px;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .currentWeather {
-  /* Current weather styles */
-  background-image: url('path_to_your_background_image_based_on_weather');
-  background-size: cover;
   padding: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconAndTemp {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+
+.weatherIcon {
+  width: 60px;
+  height: 60px;
 }
 
 .temperature {
-  /* Temperature styles */
   font-size: 3em;
   font-weight: bold;
+  margin-left: 10px; /* Add some space between the icon and the temperature */
 }
 
 .condition {
-  /* Condition styles */
   font-size: 1.2em;
+  margin-top: 5px;
+  text-transform: capitalize;
+}
+
+.detailsAndForecast {
+  flex-basis: 60%; /* Adjust the width as necessary */
+  display: flex;
+  flex-direction: column;
 }
 
 .details {
-  /* Humidity and wind styles */
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.3); /* Semi-transparent background */
-}
-
-.humidity, .wind {
-  /* Individual detail styles */
-  flex: 1;
-  text-align: center;
-}
-
-.forecast {
-  /* Forecast section styles */
   justify-content: space-around;
-  display: flex;
-  background: rgba(0, 0, 0, 0.2); /* Semi-transparent background */
+  padding: 10px 20px;
+  border-bottom: 1px solid #555; /* Add if you want a separator */
 }
 
-.forecastDay {
-  /* Individual forecast day styles */
-  flex: 1;
-  padding: 10px;
-  text-align: center;
-}
-
-.dayName {
-  /* Day name styles */
+.detailLabel {
   font-weight: bold;
+  margin-right: 5px;
 }
 
-.dayTemp {
-  /* Day temperature range styles */
+.weeklyForecast {
+  align-items: center;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  color: rgb(35, 35, 35);
+  
 }
 
-.dayCondition {
-  /* Day condition styles */
+.forecastCard {
+  background-color: rgba(255, 255, 255, 0.242);
+  flex-basis: 60%;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.icon {
+  align-items: center;
+  justify-content: center;  
+  width: 20px;
+  height: 20px;
+  margin-block-start: 5px;
+  margin-right: 10px;
 }
