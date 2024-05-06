@@ -1,7 +1,9 @@
 /* WeatherWidget.module.css */
 .weatherWidget {
   display: flex;
-  background: linear-gradient(to bottom, #c99f36, #62be65);
+  /* background: linear-gradient(to bottom, #E1B470, #47A85C); */
+
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
   color: white;
   border-radius: 15px;
   overflow: hidden;
@@ -9,7 +11,7 @@
 }
 
 .currentWeatherSection {
-  flex-basis: 40%; /* Adjust the width as necessary */
+  flex-basis: 40%; 
 }
 
 .locationTitle {
@@ -40,7 +42,7 @@
 .temperature {
   font-size: 3em;
   font-weight: bold;
-  margin-left: 10px; /* Add some space between the icon and the temperature */
+  margin-left: 10px; 
 }
 
 .condition {
@@ -50,7 +52,7 @@
 }
 
 .detailsAndForecast {
-  flex-basis: 60%; /* Adjust the width as necessary */
+  flex-basis: 60%; 
   display: flex;
   flex-direction: column;
 }
@@ -59,7 +61,7 @@
   display: flex;
   justify-content: space-around;
   padding: 10px 20px;
-  border-bottom: 1px solid #555; /* Add if you want a separator */
+  border-bottom: 1px solid #555; 
 }
 
 .detailLabel {
