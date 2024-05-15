@@ -33,8 +33,8 @@ const Dashboard = () => {
       },
     };
 
-    new tableau.Viz(tableauSummaryVizRef.current, 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V3/MainDb', options);
-    new tableau.Viz(tableauAgriDashboardVizRef.current, 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V3/Dashboard4', options);
+    new tableau.Viz(tableauSummaryVizRef.current, 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V9/Dashboard9', options);
+    new tableau.Viz(tableauAgriDashboardVizRef.current, 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V8/Demography', options);
 
     return () => {
       tableauSummaryVizRef.current?.dispose();
@@ -43,18 +43,27 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'row', height: '98vh', overflow: 'hidden', paddingTop:'5px',boxSizing: 'border-box' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'row', height: '99vh', overflow: 'hidden', paddingTop:'5px',boxSizing: 'border-box' }}>
       <Box sx={{ width: '49%', padding: '0 10px', display: 'flex',flexDirection: 'column' }}>
         <Box>
           {coords && <WeatherWidget coords={coords} />}
         </Box>
-        <Box sx={{ flex: 1, paddingTop: '10px' }}>
+        <Box sx={{ flex: 1, paddingTop: '10px',overflowY: 'hidden'  }}>
           <div ref={tableauAgriDashboardVizRef} style={{ width: '100%', height: '100%' }} />
         </Box>
       </Box>
-      <Box sx={{ width: '50%', }}>
-        <div ref={tableauSummaryVizRef} style={{ width: '100%', height: '100%' }} />
-      </Box>
+      <Box sx={{ 
+      width: '50%',
+      height: '100%',
+      overflowY: 'scroll',
+      '&::-webkit-scrollbar': {
+        display: 'none',
+      },
+      '-ms-overflow-style': 'none', 
+      'scrollbar-width': 'none'     
+    }}>
+      <div ref={tableauSummaryVizRef} style={{ width: '100%', height: '130%' }} />
+    </Box>
     </Box>
   );
 };
