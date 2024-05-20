@@ -19,7 +19,7 @@ const classifySoilProperty = (property, value) => {
       'Total Nitrogen':{low:[null,0.15],moderate:[0.15,0.25],high:[0.25,null]},
       'Potassium':{low:[null,150],moderate:[150,250],high:[250,null]},
       'Zinc':{low:[null,1.0],moderate:[1.0,1.5],high:[1.5,null]},
-      'Extra SO4':{low:[null,5.0],moderate:[5.0,10.],high:[10,20]},
+      'Extra SO4':{low:[null,5.0],moderate:[5.0,10.],high:[10,null]},
     };
   
     const threshold = thresholds[property];
@@ -113,7 +113,6 @@ const classifySoilProperty = (property, value) => {
                     tickValues: 'every 2',
                     tickSize: 5,
                     tickPadding: 5,
-                    tickRotation:0,
                     // legend:'Barangay',
                     tickRotation: isPaginated ? 15 : 0, // Rotate labels by 45 degrees if paginated
                     legend: isPaginated ? '' : 'Barangay',
