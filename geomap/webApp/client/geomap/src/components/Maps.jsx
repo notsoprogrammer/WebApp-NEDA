@@ -149,7 +149,7 @@ const Maps = () => {
           <div style={{ marginBottom: '8px', fontSize: '14px', color: '#555' }}>
             {selectedLegend.legendCategories.map((categoryInfo, index) => (
               <div key={index} style={{ marginBottom: '4px' }}>
-                <strong>{categoryInfo.label}:</strong> {categoryInfo.range}
+                <strong>{categoryInfo.label}</strong> {categoryInfo.range}
               </div>
             ))}
           </div>
@@ -521,7 +521,7 @@ const Maps = () => {
                           >
                             <Popup>
                               
-                              {category}: {feature.properties[category]}
+                              The {category} value in {feature.properties.Brgy} is {feature.properties[category]}
                             </Popup>
                           </Marker>
                         ))

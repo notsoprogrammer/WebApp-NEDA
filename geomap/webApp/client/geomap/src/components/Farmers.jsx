@@ -10,7 +10,7 @@ const Farmers = () => {
         let viz;
         const initViz = () => {
           // Replace with your Tableau dashboard URL
-          const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V3/VegFarmersList';
+          const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/CropStatistics_V10/VegFarmersList';
           
           const options = {
             width: '100%',

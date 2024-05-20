@@ -115,7 +115,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
 
                           <Box display="flex" alignItems="center" mt={'20px'}>
                             <Typography variant="h4" fontWeight="bold">
-                              MAPULON APP
+                              GEOMAP SAMAR
                             </Typography>
                           </Box>
                       </Box>
