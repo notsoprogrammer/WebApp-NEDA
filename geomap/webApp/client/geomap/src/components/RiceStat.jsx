@@ -9,7 +9,7 @@ const RiceStat = () => {
 
   useEffect(() => {
     const initViz = () => {
-      const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/Catbalogan_RiceProg_V4/CatbRiceProg';
+      const vizUrl = 'https://prod-apsoutheast-a.online.tableau.com/t/geomapsamar/views/Agri-RiceProgram/CatbRiceProg_Adjusted';
       
       const options = {
         hideTabs: true,
