@@ -18,7 +18,7 @@ const authUser = asyncHandler( async (req, res) => {
             email: user.email,
             municipality: user.municipality,
             job: user.job,
-            profileImg: user.profileImg
+            profileImg: user.profileImg,
         })
     } else { 
         res.status(401);
@@ -45,7 +45,7 @@ const registerUser = asyncHandler( async (req, res) => {
         password,
         municipality,
         job,
-        profileImg
+        profileImg,
     });
 
     if(user) {
@@ -55,8 +55,7 @@ const registerUser = asyncHandler( async (req, res) => {
             name: user.name,
             email: user.email,
             municipality: user.municipality,
-            job: user.job,
-            profileImg: user.profileImg
+            job: user.job
         })
     } else {
         res.status(400);
@@ -86,7 +85,7 @@ const userProfile = asyncHandler( async (req, res) => {
         email: req.user.email,
         municipality: req.user.municipality,
         job: req.user.job,
-        profileImg: req.user.profileImg
+        profileImg: req.user.profileImg,
     };
     res.status(200).json(user);
 });

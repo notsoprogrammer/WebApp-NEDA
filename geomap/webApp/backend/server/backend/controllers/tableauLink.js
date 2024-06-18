@@ -1,9 +1,17 @@
+
 import asyncHandler from 'express-async-handler';
 import Dashboard from '../models/dashboard.model.js';
 
 const getDashboardLinks = asyncHandler(async (req, res) => {
   console.log("getDashboardLinks called");
-  const userMunicipality = req.user ? req.user.municipality : null; // Ensure req.user is set
+  console.log("User in getDashboardLinks:", req.user);
+
+  if (!req.user) {
+    res.status(401);
+    throw new Error('Not authorized');
+  }
+
+  const userMunicipality = req.user.municipality;
   if (!userMunicipality) {
     res.status(400);
     throw new Error('Municipality not provided');
@@ -16,7 +24,7 @@ const getDashboardLinks = asyncHandler(async (req, res) => {
       farmersProfileLink: dashboard.farmersProfileLink,
       riceDashboardLink: dashboard.riceDashboardLink,
       cropsDashboardLink: dashboard.cropsDashboardLink,
-      weatherDashboardLink:dashboard.weatherDashboardLink,
+      weatherDashboardLink: dashboard.weatherDashboardLink,
     });
   } else {
     res.status(404);
@@ -26,7 +34,7 @@ const getDashboardLinks = asyncHandler(async (req, res) => {
 
 const addDashboardLinks = asyncHandler(async (req, res) => {
   console.log("addDashboardLinks called");
-  const { municipality, mainDashboardLink, farmersProfileLink, riceDashboardLink, cropsDashboardLink,weatherDashboardLink } = req.body;
+  const { municipality, mainDashboardLink, farmersProfileLink, riceDashboardLink, cropsDashboardLink, weatherDashboardLink } = req.body;
 
   const dashboardExists = await Dashboard.findOne({ municipality });
   if (dashboardExists) {
@@ -48,3 +56,4 @@ const addDashboardLinks = asyncHandler(async (req, res) => {
 });
 
 export { getDashboardLinks, addDashboardLinks };
+
