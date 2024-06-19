@@ -29,7 +29,7 @@ app.use(cookieParser());
 
 // CORS configuration
 const corsOptions = {
-  origin: 'http://localhost:3000', // Replace with your frontend domain
+  origin: 'http://localhost:3000', // Assuming your frontend is running on port 3000
   credentials: true, // Allow cookies to be sent with requests
 };
 app.use(cors(corsOptions));
