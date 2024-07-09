@@ -188,13 +188,13 @@ const Maps = () => {
   };
 
   const propertyKeyMap = {
+    'Acidity': 'pH',
     'Calcium': 'Calcium',
     'Iron': 'Iron',
     'Organic Matter': 'Organic_Matter',
     'Available P': 'Phosphorus',
     'Total Nitrogen': 'Nitrogen',
     'Potassium': 'Potassium',
-    'Acidity': 'pH',
     'Zinc': 'Zinc',
     'Extra SO4': 'Sulphate',
   };
@@ -256,11 +256,11 @@ const Maps = () => {
 
   // Data lists
   const MuniList = ['Samar', 'Basey', 'Calbayog', 'Calbiga', 'Gandara', 'Jiabong', 'Matuguinao', 'Paranas', 'San Jorge', 'San Jose De Buan', 'San Sebastian'];
-  const propertyList = ['Calcium', 'Iron', 'Organic Matter', 'Available P', 'Total Nitrogen', 'Potassium', 'Acidity', 'Zinc', 'Extra SO4'];
+  const propertyList = ['Acidity', 'Iron', 'Organic Matter', 'Available P', 'Total Nitrogen', 'Potassium','Calcium' , 'Zinc', 'Extra SO4'];
   const cropList = ['Ampalaya', 'Banana', 'Corn', 'Cassava', 'Coconut', 'Sitaw', 'Okra','Eggplant', 'Pineapple', 'Upland Rice', 'Ginger', 'Sweet Potato', 'Taro','Pili','Lansones'];
 
   const dataTypes = {
-    'Soil Properties': ['Calcium', 'Iron', 'Organic Matter', 'Available P', 'Total Nitrogen', 'Potassium', 'Acidity', 'Zinc', 'Extra SO4'],
+    'Soil Properties': ['Acidity', 'Iron', 'Organic Matter', 'Available P', 'Total Nitrogen', 'Potassium','Calcium' , 'Zinc', 'Extra SO4'],
     'Crop Suitability': ['Ampalaya', 'Banana', 'Corn', 'Cassava', 'Coconut', 'Sitaw', 'Okra','Eggplant', 'Pineapple', 'Upland Rice', 'Ginger', 'Sweet Potato', 'Taro','Pili','Lansones'],
     'Soil Texture': ['Clay', 'Silt', 'Sand'],
     };

@@ -4,7 +4,8 @@
   import { setMode } from '../slices/modeSlice';
   import { clearCredentials } from '../slices/authSlice';
   import { useLogoutMutation } from '../slices/usersApiSlice';
-  import {Groups2Outlined,HomeOutlined,DarkModeOutlined,LightModeOutlined,SettingsOutlined,ShoppingCartOutlined,ExitToAppOutlined,ReceiptLongOutlined,PublicOutlined,ChevronRightOutlined // Import the icon for logout button
+  import {Groups2Outlined,HomeOutlined,DarkModeOutlined,LightModeOutlined,SettingsOutlined,ShoppingCartOutlined,ExitToAppOutlined,ReceiptLongOutlined,PublicOutlined,ChevronRightOutlined, // Import the icon for logout button
+  Person
   } from "@mui/icons-material";
 import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButton,ListItemIcon,ListItemText,Typography,useTheme,Menu,MenuItem,Stack} from "@mui/material";
 
@@ -20,7 +21,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
     },
     {
       text: "Farmers",
-      icon: <ShoppingCartOutlined />,
+      icon: <Person />,
     },
     // {
     //   text: "Associations",
@@ -35,10 +36,10 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
       icon: <ReceiptLongOutlined />,
     },
 
-    {
-      text: "MapUploads",
-      icon: <PublicOutlined />,
-    },
+    // {
+    //   text: "MapUploads",
+    //   icon: <PublicOutlined />,
+    // },
   ];
 
 
@@ -115,7 +116,7 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
 
                           <Box display="flex" alignItems="center" mt={'20px'}>
                             <Typography variant="h4" fontWeight="bold">
-                              MAPULON APP
+                              {/* MAPULON APP */}
                             </Typography>
                           </Box>
                       </Box>
@@ -176,12 +177,12 @@ import { Avatar,Box,Divider, Drawer,IconButton,Button,List,ListItem,ListItemButt
                         >
                             {theme.palette.mode === "dark" ? "Dark Mode" : "Light Mode"}
                         </Button>
-                        <Button
+                        {/* <Button
                             startIcon={<SettingsOutlined />}
                             sx={buttonStyle}
                         >
                             Settings
-                        </Button>
+                        </Button> */}
                         <Button
                             startIcon={<ExitToAppOutlined />}
                             onClick={logoutHandler}
